@@ -15,7 +15,7 @@
  */
 package io.github.dej2vu.petclinic.vets;
 
-import io.github.dej2vu.petclinic.vets.system.VetsProperties;
+import io.github.dej2vu.petclinic.vets.config.VetsProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

@@ -13,28 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.dej2vu.petclinic.vets.system;
+package io.github.dej2vu.petclinic.customers.model;
 
-import lombok.Data;
-
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * Typesafe custom configuration.
+ * Repository class for <code>Owner</code> domain objects All method names are compliant with Spring Data naming
+ * conventions so this interface can easily be extended for Spring Data See here: http://static.springsource.org/spring-data/jpa/docs/current/reference/html/jpa.repositories.html#jpa.query-methods.query-creation
  *
+ * @author Ken Krebs
+ * @author Juergen Hoeller
+ * @author Sam Brannen
+ * @author Michael Isvy
  * @author Maciej Szarlinski
  */
-@Data
-@ConfigurationProperties(prefix = "vets")
-public class VetsProperties {
-
-    private Cache cache;
-
-    @Data
-    public static class Cache {
-
-        private int ttl;
-
-        private int heapSize;
-    }
+public interface OwnerRepository extends JpaRepository<Owner, Integer> {
 }

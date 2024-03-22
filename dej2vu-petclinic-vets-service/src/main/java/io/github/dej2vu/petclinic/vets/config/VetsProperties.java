@@ -13,32 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.dej2vu.petclinic.customers.web;
+package io.github.dej2vu.petclinic.vets.config;
 
-import io.github.dej2vu.petclinic.customers.model.Pet;
-import io.github.dej2vu.petclinic.customers.model.PetType;
-import org.springframework.format.annotation.DateTimeFormat;
+import lombok.Data;
 
-import java.util.Date;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @author mszarlinski@bravurasolutions.com on 2016-12-05.
+ * Typesafe custom configuration.
+ *
+ * @author Maciej Szarlinski
  */
+@Data
+@ConfigurationProperties(prefix = "vets")
+public class VetsProperties {
 
-record PetDetails(
+    private Cache cache;
 
-    long id,
+    @Data
+    public static class Cache {
 
-    String name,
+        private int ttl;
 
-    String owner,
-
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    Date birthDate,
-
-    PetType type
-) {
-    public PetDetails(Pet pet) {
-        this(pet.getId(), pet.getName(), pet.getOwner().getFirstName() + " " + pet.getOwner().getLastName(), pet.getBirthDate(), pet.getType());
+        private int heapSize;
     }
 }

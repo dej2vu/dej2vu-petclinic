@@ -15,12 +15,12 @@
  */
 package io.github.dej2vu.petclinic.customers.web;
 
+import io.github.dej2vu.petclinic.customers.model.*;
 import io.micrometer.core.annotation.Timed;
 import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
-import org.springframework.samples.petclinic.customers.model.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

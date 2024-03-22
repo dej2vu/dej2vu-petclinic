@@ -1,7 +1,7 @@
 package io.github.dej2vu.petclinic.customers.web.mapper;
 
+import io.github.dej2vu.petclinic.customers.model.Owner;
 import io.github.dej2vu.petclinic.customers.web.OwnerRequest;
-import org.springframework.samples.petclinic.customers.model.Owner;
 import org.springframework.stereotype.Component;
 
 @Component
